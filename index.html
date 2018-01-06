@@ -261,13 +261,14 @@
                   <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
                 </div>
                 <br>
-                <div class="col-lg-12 text-center" style="visibility: hidden; color: white">
-                  <p id="submitted">
+                <div class="col-lg-12 text-center" style="display:none; color: white" id="submitted">
+                  <p>
                     Message Submitted
                   </p>
                 </div>
               </div>
             </form>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
           </div>
         </div>
       </div>
@@ -317,9 +318,10 @@
     <script type="text/javascript">var submitted=false;</script>
     <script type="text/javascript">
     $('#contactForm').on('submit', function(e) {
-      $("#contactForm")[0].reset();
-      document.getElementById("submitted").style.visibility = 'visible';
-      });
+      $('#contactForm')[0].reset();
+      $('#submitted').fadeIn(2000);
+      $('#submitted').fadeOut(2000);
+    });
     </script>
 
     <!-- Custom scripts for this template -->
